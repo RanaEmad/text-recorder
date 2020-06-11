@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/text-recorder/static/css/main.e330dce1.chunk.css",
+    "main.js": "/text-recorder/static/js/main.bca13e06.chunk.js",
+    "main.js.map": "/text-recorder/static/js/main.bca13e06.chunk.js.map",
+    "runtime-main.js": "/text-recorder/static/js/runtime-main.73e8b258.js",
+    "runtime-main.js.map": "/text-recorder/static/js/runtime-main.73e8b258.js.map",
+    "static/js/2.e5485dc4.chunk.js": "/text-recorder/static/js/2.e5485dc4.chunk.js",
+    "static/js/2.e5485dc4.chunk.js.map": "/text-recorder/static/js/2.e5485dc4.chunk.js.map",
+    "index.html": "/text-recorder/index.html",
+    "precache-manifest.24335bc04779b70bce161608fbff3f64.js": "/text-recorder/precache-manifest.24335bc04779b70bce161608fbff3f64.js",
+    "service-worker.js": "/text-recorder/service-worker.js",
+    "static/css/main.e330dce1.chunk.css.map": "/text-recorder/static/css/main.e330dce1.chunk.css.map",
+    "static/js/2.e5485dc4.chunk.js.LICENSE.txt": "/text-recorder/static/js/2.e5485dc4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.73e8b258.js",
+    "static/js/2.e5485dc4.chunk.js",
+    "static/css/main.e330dce1.chunk.css",
+    "static/js/main.bca13e06.chunk.js"
+  ]
+}
