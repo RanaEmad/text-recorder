@@ -1,4 +1,11 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRecordVinyl,
+  faStop,
+  faPlay,
+  faRedo,
+} from "@fortawesome/free-solid-svg-icons";
 import "./TextRecorder.css";
 
 class TextRecorder extends React.Component {
@@ -12,10 +19,18 @@ class TextRecorder extends React.Component {
           placeholder="Press Record and start typing..."
         ></textarea>
         <div className="controls">
-          <button className="btn">Record</button>
-          <button className="btn">Stop Recording</button>
-          <button className="btn">Play</button>
-          <button className="btn">Reset</button>
+          <button className="btn">
+            <FontAwesomeIcon icon={faRecordVinyl} color="#c51818" /> Record
+          </button>
+          <button className="btn">
+            <FontAwesomeIcon icon={faStop} color="#c51818" /> Stop Recording
+          </button>
+          <button className="btn">
+            <FontAwesomeIcon icon={faPlay} color="#c51818" /> Play
+          </button>
+          <button className="btn">
+            <FontAwesomeIcon icon={faRedo} color="#c51818" /> Reset
+          </button>
         </div>
       </div>
     );
