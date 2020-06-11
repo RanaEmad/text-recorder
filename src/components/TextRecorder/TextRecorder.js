@@ -17,6 +17,7 @@ class TextRecorder extends React.Component {
       record: false,
     };
   }
+
   handleRecord = () => {
     let history = {};
     history[new Date().getTime()] = this.state.text;
@@ -25,6 +26,7 @@ class TextRecorder extends React.Component {
       record: true,
     });
   };
+
   handleKeyUp = () => {
     if (this.state.record) {
       let history = this.state.history;
@@ -34,11 +36,19 @@ class TextRecorder extends React.Component {
       });
     }
   };
+
   handleTextChange = (e) => {
     this.setState({
       text: e.target.value,
     });
   };
+
+  handleStopRecording = () => {
+    this.setState({
+      record: false,
+    });
+  };
+
   render() {
     return (
       <div className="text-recorder">
@@ -54,7 +64,7 @@ class TextRecorder extends React.Component {
           <button className="btn" onClick={this.handleRecord}>
             <FontAwesomeIcon icon={faRecordVinyl} color="#c51818" /> Record
           </button>
-          <button className="btn">
+          <button className="btn" onClick={this.handleStopRecording}>
             <FontAwesomeIcon icon={faStop} color="#c51818" /> Stop Recording
           </button>
           <button className="btn">
