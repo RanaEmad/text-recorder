@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #16202c;
+  color: white;
+}
