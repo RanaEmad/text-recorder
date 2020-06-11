@@ -25,6 +25,15 @@ class TextRecorder extends React.Component {
       record: true,
     });
   };
+  handleKeyUp = () => {
+    if (this.state.record) {
+      let history = this.state.history;
+      history[new Date().getTime()] = this.state.text;
+      this.setState({
+        history
+      });
+    }
+  };
   render() {
     return (
       <div className="text-recorder">
@@ -33,6 +42,7 @@ class TextRecorder extends React.Component {
           className="text"
           rows="10"
           placeholder="Press Record and start typing..."
+          onKeyUp={this.handelKeyUp}
         ></textarea>
         <div className="controls">
           <button className="btn" onClick={this.handleRecord}>
