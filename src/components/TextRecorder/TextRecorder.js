@@ -65,6 +65,14 @@ class TextRecorder extends React.Component {
     });
   };
 
+  handleReset = () => {
+    this.setState({
+      history: {},
+      text: "",
+      record: false,
+    });
+  };
+
   render() {
     return (
       <div className="text-recorder">
