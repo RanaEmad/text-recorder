@@ -15,6 +15,7 @@ class TextRecorder extends React.Component {
       history: {},
       text: "",
       record: false,
+      stop: false,
     };
   }
 
@@ -46,6 +47,7 @@ class TextRecorder extends React.Component {
   handleStopRecording = () => {
     this.setState({
       record: false,
+      stop: true,
     });
   };
 
@@ -70,10 +72,35 @@ class TextRecorder extends React.Component {
       history: {},
       text: "",
       record: false,
+      stop: false,
     });
   };
 
   render() {
+    let controls = (
+      <button className="btn" onClick={this.handleRecord}>
+        <FontAwesomeIcon icon={faRecordVinyl} color="#c51818" /> Record
+      </button>
+    );
+    if (this.state.record) {
+      controls = (
+        <button className="btn" onClick={this.handleStopRecording}>
+          <FontAwesomeIcon icon={faStop} color="#c51818" /> Stop Recording
+        </button>
+      );
+    }
+    if (this.state.stop) {
+      controls = (
+        <React.Fragment>
+          <button className="btn" onClick={this.handlePlay}>
+            <FontAwesomeIcon icon={faPlay} color="#c51818" /> Play
+          </button>
+          <button className="btn" onClick={this.handleReset}>
+            <FontAwesomeIcon icon={faRedo} color="#c51818" /> Reset
+          </button>
+        </React.Fragment>
+      );
+    }
     return (
       <div className="text-recorder">
         <h1 className="header">Text Recorder</h1>
@@ -86,18 +113,7 @@ class TextRecorder extends React.Component {
           value={this.state.text}
         ></textarea>
         <div className="controls">
-          <button className="btn" onClick={this.handleRecord}>
-            <FontAwesomeIcon icon={faRecordVinyl} color="#c51818" /> Record
-          </button>
-          <button className="btn" onClick={this.handleStopRecording}>
-            <FontAwesomeIcon icon={faStop} color="#c51818" /> Stop Recording
-          </button>
-          <button className="btn" onClick={this.handlePlay}>
-            <FontAwesomeIcon icon={faPlay} color="#c51818" /> Play
-          </button>
-          <button className="btn" onClick={this.handleReset}>
-            <FontAwesomeIcon icon={faRedo} color="#c51818" /> Reset
-          </button>
+          {controls}
         </div>
       </div>
     );
