@@ -49,6 +49,22 @@ class TextRecorder extends React.Component {
     });
   };
 
+  handlePlay = () => {
+    this.setState({
+      text: "",
+    });
+    let keys = Object.keys(this.state.history);
+    let prevTimestamp = keys.shift();
+    let time = 0;
+    keys.forEach((timestamp) => {
+      time += timestamp - prevTimestamp;
+      setTimeout(() => {
+        this.setState({ text: this.state.history[timestamp] });
+      }, time);
+      prevTimestamp = timestamp;
+    });
+  };
+
   render() {
     return (
       <div className="text-recorder">
@@ -57,8 +73,9 @@ class TextRecorder extends React.Component {
           className="text"
           rows="10"
           placeholder="Press Record and start typing..."
-          onKeyUp={this.handelKeyUp}
+          onKeyUp={this.handleKeyUp}
           onChange={this.handleTextChange}
+          value={this.state.text}
         ></textarea>
         <div className="controls">
           <button className="btn" onClick={this.handleRecord}>
@@ -67,10 +84,10 @@ class TextRecorder extends React.Component {
           <button className="btn" onClick={this.handleStopRecording}>
             <FontAwesomeIcon icon={faStop} color="#c51818" /> Stop Recording
           </button>
-          <button className="btn">
+          <button className="btn" onClick={this.handlePlay}>
             <FontAwesomeIcon icon={faPlay} color="#c51818" /> Play
           </button>
-          <button className="btn">
+          <button className="btn" onClick={this.handleReset}>
             <FontAwesomeIcon icon={faRedo} color="#c51818" /> Reset
           </button>
         </div>
