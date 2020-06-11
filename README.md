@@ -8,3 +8,11 @@ A React script that records the sequence a certain text is written in and plays 
 - Run `npm install` in your root folder
 - Run `npm start`
 - Visit http://localhost:3000/ in your browser
+
+# Author
+
+**Rana Emad** - (https://github.com/RanaEmad)
+
+# License
+
+This project is licensed under the MIT License
