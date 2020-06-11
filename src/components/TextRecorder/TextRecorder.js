@@ -9,6 +9,22 @@ import {
 import "./TextRecorder.css";
 
 class TextRecorder extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      history: {},
+      text: "",
+      record: false,
+    };
+  }
+  handleRecord = () => {
+    let history = {};
+    history[new Date().getTime()] = this.state.text;
+    this.setState({
+      history,
+      record: true,
+    });
+  };
   render() {
     return (
       <div className="text-recorder">
@@ -19,7 +35,7 @@ class TextRecorder extends React.Component {
           placeholder="Press Record and start typing..."
         ></textarea>
         <div className="controls">
-          <button className="btn">
+          <button className="btn" onClick={this.handleRecord}>
             <FontAwesomeIcon icon={faRecordVinyl} color="#c51818" /> Record
           </button>
           <button className="btn">
